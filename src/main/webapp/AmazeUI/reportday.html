@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Hello World!</title>
+</head>
+<body>
+	<h1 th:inline="text">日报AmazeUI 文件夹</h1>
+	<table>
+		<tr>
+			<th>类型</th>
+			<th>直营销售</th>
+		</tr>
+
+		<!-- 对集合变量hello进行遍历 -->
+		<tr th:each="day : ${report}">
+			<td th:text="${day.rtype}"></td>
+			<td th:text="${day.zyxs}"></td>
+		</tr>
+	</table>
+</body>
+</html>

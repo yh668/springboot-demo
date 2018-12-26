@@ -1,0 +1,28 @@
+<html>
+
+<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+
+window.onload=function(){
+	$(".click").click(function(){
+	    alert("onload 你大爷!!!");
+	});
+}
+
+$(document).ready(function(){
+	$(".click").click(function(){
+    alert("document 你大爷!!!");
+  });
+});
+
+</script>
+
+<body>
+
+	
+
+	<h2 class="click">Hello Test!</h2>
+</body>
+
+
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" 
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.demo.dao.SyslogMapper">
+
+	<resultMap id="SyslogMap" type="com.common.syslog.SysLogBO"> 
+		<result property="id" column="id" />
+		<result property="className" column="className" />
+		<result property="methodName" column="methodName" />
+		<result property="params" column="params" />
+		<result property="exeuTime" column="exeuTime" />
+		<result property="remark" column="remark" />
+		<result property="createDate" column="createDate" />
+	</resultMap>
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        <![CDATA[
+            INSERT INTO syslog (
+                className,
+                methodName,
+                params,
+                exeuTime,
+                remark,
+                createDate
+            ) VALUES (
+            	#{className},
+            	#{methodName},
+            	#{params},
+            	#{exeuTime},
+            	#{remark},
+            	#{createDate}
+            )
+        ]]>
+	</insert>
+
+
+</mapper> 
+

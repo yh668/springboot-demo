@@ -3,14 +3,16 @@ package com.demo.controller;
 
 import java.util.List;
 
-import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.common.oplog.LogAnnotation;
+import com.common.syslog.SysLog;
 import com.demo.model.Users;
 import com.demo.service.UsersService;
 
@@ -57,6 +59,8 @@ public class UsersController {
 	 * @param id
 	 * @return JSON对象
 	 */
+	@SysLog("根据ID查询用户信息")
+	@LogAnnotation(operateContent=" ope 根据ID查信息",operateType="select")
 	@RequestMapping(value = "/findById", produces = "application/json; charset=utf-8")
 	@ResponseBody
 	public String findById(int id) {
